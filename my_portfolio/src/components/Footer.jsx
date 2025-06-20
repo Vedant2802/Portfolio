@@ -4,10 +4,12 @@ import { config } from "../constants/config";
 
 const Footer = () => {
   const {
-    footer: { linkedin },
+    footer: { linkedin, github },
   } = staticText;
 
   const linkedinLink = config.LINKEDIN_URL;
+  const githubLink = config.GITHUB_URL;
+  console.log(githubLink);
 
   return (
     <footer
@@ -16,9 +18,15 @@ const Footer = () => {
     >
       <a
         href={linkedinLink}
-        className="text-xl font-bold hover:bg-amber-100 border-2 border-gray-900 rounded-lg p-1"
+        className="text-xl font-light hover:bg-gray-100 border-2 border-transparent rounded-lg p-1 drop-shadow-2xl"
       >
         {linkedin}
+      </a>
+      <a
+        href={githubLink}
+        className="text-xl font-light hover:bg-gray-100 border-2 border-transparent rounded-lg p-1 cursor-pointer drop-shadow-2xl"
+      >
+        {github}
       </a>
     </footer>
   );

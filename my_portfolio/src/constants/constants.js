@@ -7,6 +7,7 @@ export const websiteLinks = {
 export const staticText = {
   footer: {
     linkedin: "LinkedIn",
+    github: "Github",
   },
   header: {
     contact: "Contact",
