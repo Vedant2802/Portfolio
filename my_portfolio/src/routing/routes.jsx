@@ -8,6 +8,7 @@ import App from "../App";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Resume from "../pages/Resume";
 
 // Original commented out code
 // const router = createBrowserRouter([
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="home" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="resume" element={<Resume />} />
     </Route>
   )
 );

@@ -4,7 +4,7 @@ import { staticText } from "../constants/constants";
 
 export const Header = () => {
   const {
-    header: { contact, about, home },
+    header: { contact, about, home, resume },
   } = staticText;
   return (
     <header id="header" className="h-15 bg-gray-400">
@@ -44,6 +44,18 @@ export const Header = () => {
           }
         >
           {contact}
+        </NavLink>
+        <NavLink
+          to="/resume"
+          className={({ isActive }) =>
+            `px-3 py-1 rounded-lg transition-colors mt-1 ${
+              isActive
+                ? " bg-gray-100"
+                : "text-gray-700 hover:text-gray-900 hover:bg-gray-300"
+            }`
+          }
+        >
+          {resume}
         </NavLink>
       </nav>
     </header>
