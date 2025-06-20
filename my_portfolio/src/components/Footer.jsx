@@ -18,13 +18,13 @@ const Footer = () => {
     >
       <a
         href={linkedinLink}
-        className="text-xl font-light hover:bg-gray-100 border-2 border-transparent rounded-lg p-1 drop-shadow-2xl"
+        className="text-xl font-light hover:bg-gray-100 border-2 border-transparent rounded-lg p-1 cursor-pointer"
       >
         {linkedin}
       </a>
       <a
         href={githubLink}
-        className="text-xl font-light hover:bg-gray-100 border-2 border-transparent rounded-lg p-1 cursor-pointer drop-shadow-2xl"
+        className="text-xl font-light hover:bg-gray-100 border-2 border-transparent rounded-lg p-1 cursor-pointer "
       >
         {github}
       </a>
