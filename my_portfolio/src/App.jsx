@@ -8,15 +8,19 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [loadingPercentage, setLoadingPercentage] = useState(0);
 
+  const evaluationLogic = (value, interval) => {
+    const newValue = value + 1;
+    if (newValue === 100) {
+      setLoading(false);
+      clearInterval(interval);
+    }
+    return newValue;
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setLoadingPercentage((prev) => {
-        const newValue = prev + 1;
-        if (newValue === 100) {
-          setLoading(false);
-          clearInterval(interval);
-        }
-        return newValue;
+        return evaluationLogic(prev, interval);
       });
     }, 20);
     return () => clearInterval(interval);
