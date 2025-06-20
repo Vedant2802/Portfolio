@@ -5,7 +5,13 @@ const mainSlice = createSlice({
   initialState: {
     userData: null,
   },
-  reducers: {},
+  reducers: {
+    set_user_data: (state, action) => {
+      state.userData = action.payload;
+    },
+  },
 });
+
+export const { set_user_data } = mainSlice.actions;
 
 export default mainSlice.reducer;

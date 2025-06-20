@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Header } from "./components/Header";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import loader from "./assets/loader.svg";
 import { getUserData } from "./api/apiAction";
+import { useDispatch } from "react-redux";
+import { set_user_data } from "./store/mainSlice";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [loadingPercentage, setLoadingPercentage] = useState(0);
   const [userData, setUserData] = useState(null);
+  const dispatch = useDispatch();
 
   const evaluationLogic = (value, interval) => {
     const newValue = value + 1;
@@ -31,10 +34,13 @@ function App() {
   useEffect(() => {
     const fetchUser = async () => {
       const data = await getUserData();
+      dispatch(set_user_data(data));
       setUserData(data);
     };
     fetchUser();
   }, []);
+
+  console.log(userData);
 
   return (
     <div>
