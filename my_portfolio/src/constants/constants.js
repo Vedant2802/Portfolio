@@ -16,3 +16,7 @@ export const staticText = {
     resume: "Resume",
   },
 };
+
+export const endpoints = {
+  userData: "https://api.github.com/users/Vedant2802",
+};

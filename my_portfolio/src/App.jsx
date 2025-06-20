@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Header } from "./components/Header";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import loader from "./assets/loader.svg";
+import { getUserData } from "./api/apiAction";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [loadingPercentage, setLoadingPercentage] = useState(0);
+  const [userData, setUserData] = useState(null);
 
   const evaluationLogic = (value, interval) => {
     const newValue = value + 1;
@@ -24,6 +26,14 @@ function App() {
       });
     }, 20);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const data = await getUserData();
+      setUserData(data);
+    };
+    fetchUser();
   }, []);
 
   return (
