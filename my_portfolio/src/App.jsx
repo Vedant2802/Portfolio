@@ -27,7 +27,7 @@ function App() {
       setLoadingPercentage((prev) => {
         return evaluationLogic(prev, interval);
       });
-    }, 20);
+    }, 40);
     return () => clearInterval(interval);
   }, []);
 
@@ -45,12 +45,12 @@ function App() {
   return (
     <div>
       {loading && (
-        <div className="flex justify-center items-center h-screen text-4xl font-bold gap-3">
-          <img
+        <div className="flex justify-center items-center h-screen text-4xl font-bold gap-3 bg-gray-400">
+          {/* <img
             src={loader}
             alt="loader"
             className="w-[250px] h-[250px] animate-spin"
-          />
+          /> */}
           <span className="fixed ml-5">{loadingPercentage}%</span>
         </div>
       )}
