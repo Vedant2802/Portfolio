@@ -6,12 +6,12 @@ function Login() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
 
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
   };
 
-  const dispatch = useDispatch();
   const handleSubmit = () => {
     console.log("triggered");
     const data = {
