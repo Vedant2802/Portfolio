@@ -1,10 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewUsers } from "../store/authSlice";
 
 function Login() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePassword = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   const dispatch = useDispatch();
   const handleSubmit = () => {
     console.log("triggered");
@@ -15,6 +21,8 @@ function Login() {
 
     console.log(data);
     dispatch(addNewUsers(data));
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
   };
   return (
     <div
@@ -31,12 +39,27 @@ function Login() {
           placeholder="Enter your email"
           className="border-2 border-black rounded-lg cursor-pointer"
         ></input>
-        <input
+        {/* <input
           ref={passwordRef}
-          type="text"
+          type="password"
           placeholder="Enter your password"
           className="border-2 border-black rounded-lg cursor-pointer"
-        ></input>
+          //   onToggle={}
+        ></input> */}
+        <div className="relative w-full">
+          <input
+            ref={passwordRef}
+            type={showPassword ? "text" : "password"}
+            placeholder="Enter your password"
+            className="border-2 border-black rounded-lg px-4 py-2 w-full pr-10"
+          />
+          <span
+            onClick={togglePassword}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl"
+          >
+            {showPassword ? "🙈" : "👁️"}
+          </span>
+        </div>
         <button
           className="border-2 border-black rounded-lg cursor-pointer"
           onClick={handleSubmit}
