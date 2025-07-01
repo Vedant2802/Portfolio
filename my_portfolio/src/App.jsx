@@ -45,13 +45,22 @@ function App() {
   return (
     <div>
       {loading && (
-        <div className="flex justify-center items-center h-screen text-4xl font-bold gap-3 bg-gray-400">
+        <div className="flex flex-col justify-center items-center h-screen text-4xl font-bold gap-6 bg-gray-400">
           {/* <img
             src={loader}
             alt="loader"
             className="w-[250px] h-[250px] animate-spin"
           /> */}
-          <span className="fixed ml-5">{loadingPercentage}%</span>
+          {/* <span className="text-6xl w-32 text-center">
+            {loadingPercentage}%
+          </span> */}
+          <span className="text-4xl w-32">Loading...</span>
+          <div className="w-96 bg-gray-300 h-4 rounded-full overflow-hidden">
+            <div
+              className="bg-blue-600 h-full rounded-full transition-all duration-300 ease-out"
+              style={{ width: `${loadingPercentage}%` }}
+            ></div>
+          </div>
         </div>
       )}
       {!loading && (

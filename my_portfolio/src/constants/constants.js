@@ -21,3 +21,5 @@ export const staticText = {
 export const endpoints = {
   userData: "https://api.github.com/users/Vedant2802",
 };
+
+export const ANIMATION_INTERVAL = 20;
