@@ -14,6 +14,7 @@ export const staticText = {
     about: "About",
     home: "Home",
     resume: "Resume",
+    login: "Login",
   },
 };
 

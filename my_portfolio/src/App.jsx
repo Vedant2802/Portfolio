@@ -40,7 +40,7 @@ function App() {
     fetchUser();
   }, []);
 
-  console.log(userData);
+  // console.log(userData);
 
   return (
     <div>
