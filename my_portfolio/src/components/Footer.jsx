@@ -9,7 +9,7 @@ const Footer = () => {
 
   const linkedinLink = config.LINKEDIN_URL;
   const githubLink = config.GITHUB_URL;
-  console.log(githubLink);
+  // console.log(githubLink);
 
   return (
     <footer
