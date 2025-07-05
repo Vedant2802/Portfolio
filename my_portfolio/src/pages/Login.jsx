@@ -33,6 +33,7 @@ function Login() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    // console.log(e.target);
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -66,7 +67,7 @@ function Login() {
         password: formData.password,
       };
 
-      console.log("Submitting login data:", data);
+      // console.log("Submitting login data:", data);
       await dispatch(addNewUsers(data));
 
       // Reset form after successful submission
