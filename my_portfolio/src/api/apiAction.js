@@ -17,3 +17,14 @@ export const getUserData = async () => {
     return null;
   }
 };
+
+export const authData = async (dispatch) => {
+  try {
+    const response = await fetch("https://api.github.com/users/Vedant2802");
+    const data = await response.json();
+    console.log(data);
+    dispatch(setUserData);
+  } catch (error) {
+    throw new Error(error);
+  }
+};

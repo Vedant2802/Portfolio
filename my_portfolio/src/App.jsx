@@ -6,6 +6,7 @@ import loader from "./assets/loader.svg";
 import { getUserData } from "./api/apiAction";
 import { useDispatch } from "react-redux";
 import { set_user_data } from "./store/mainSlice";
+import { authData } from "./store/thunkStore";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,15 +32,17 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const data = await getUserData();
+  //     dispatch(set_user_data(data));
+  //     setUserData(data);
+  //   };
+  //   fetchUser();
+  // }, []);
   useEffect(() => {
-    const fetchUser = async () => {
-      const data = await getUserData();
-      dispatch(set_user_data(data));
-      setUserData(data);
-    };
-    fetchUser();
+    dispatch(authData());
   }, []);
-
   return (
     <div>
       {loading && (
