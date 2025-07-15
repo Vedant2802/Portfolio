@@ -10,6 +10,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Resume from "../pages/Resume";
 import Login from "../pages/Login";
+import Search from "../pages/Search";
 
 // Original commented out code
 // const router = createBrowserRouter([
@@ -44,6 +45,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route path="resume" element={<Resume />} />
       <Route path="login" element={<Login />} />
+      <Route path="search" element={<Search />} />
     </Route>
   )
 );
