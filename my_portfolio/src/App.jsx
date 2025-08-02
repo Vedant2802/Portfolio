@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Header } from "./components/Header";
 import { useEffect, useState } from "react";
-import loader from "./assets/loader.svg";
+// import loader from "./assets/loader.svg";
 import { getUserData } from "./api/apiAction";
 import { useDispatch } from "react-redux";
 import { set_user_data } from "./store/mainSlice";
